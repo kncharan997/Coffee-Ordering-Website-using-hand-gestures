@@ -290,7 +290,7 @@
                             addCartButton.click();
                             addCartButton.removeEventListener('click', addCartClicked);
                             buttonClicked = true; 
-                    }, 5000);
+                    }, 3000);
                     break;
                 case 2:
                     setTimeout(() => {
@@ -298,7 +298,7 @@
                             addCartButton.click();
                             addCartButton.removeEventListener('click', addCartClicked);
                             buttonClicked = true;
-                    }, 5000);
+                    }, 3000);
 
                     break;
                 case 3:
@@ -307,12 +307,12 @@
                             addCartButton.click();
                             addCartButton.removeEventListener('click', addCartClicked);
                             buttonClicked = true;
-                    }, 5000);
+                    }, 3000);
                     break;
                 case 4:
                     setTimeout(() => {
                         window.location.href = '';
-                    }, 5000);
+                    }, 3000);
                     break;
                 case 5:
                     setTimeout(() => {
@@ -320,7 +320,7 @@
                             addCartButton.click();
                             addCartButton.addEventListener('click', buyButtonClicked);
                             buttonClicked = true;
-                    }, 5000);
+                    }, 3000);
                     break;
                 
                 default:

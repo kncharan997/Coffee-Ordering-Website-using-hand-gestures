@@ -294,7 +294,7 @@
             <h1 class="heading"><span>Contact</span> Us</h1>
             <div class="row">
                 <div id="map" class="map pull-left"></div>
-                <form name="contact" method="POST" action="https://formspree.io/f/xayzavgb">
+                <form name="contact" method="POST" action="https://formspree.io/f/xayrveon">
                     <h3> Get in touch with us!</h3>
                     <div class="inputBox">
                         <span class="fas fa-envelope"></span>
