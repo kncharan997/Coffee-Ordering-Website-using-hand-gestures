@@ -91,9 +91,6 @@
                 <li class="nav-item">
                     <a href="#gallery" class="text-decoration-none">Gallery</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="#blogs" class="text-decoration-none">Blogs</a>
-                </li> -->
                 <li class="nav-item">
                     <a href="#contact" class="text-decoration-none">Contact</a>
                 </li>

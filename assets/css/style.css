@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
 :root {
-    --main-color: #9F5C44;
+    --main-color: #82594a;
     --second-color: #64342C;
     --third-color: #644C2C;
-    --fourth-color: #392414;
-    --fifth-color: #1F232C;
+    --fourth-color: #e98031;
+    --fifth-color: #082567;
     --sixth-color: #e7a891;
     --black: #13131a;
     --bg: #000000;
-    --border: .1rem solid rgba(255,255,255,.3);
+    --border: .1rem solid rgba(143, 119, 119, 0.3);
 }
 
 * {

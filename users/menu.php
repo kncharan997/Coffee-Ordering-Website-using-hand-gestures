@@ -94,9 +94,6 @@
                     <a href="index.php?section=#gallery" class="text-decoration-none">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?section=#blogs" class="text-decoration-none">Blogs</a>
-                </li>
-                <li class="nav-item">
                     <a href="index.php?section=#contact" class="text-decoration-none">Contact</a>
                 </li>
                 <li class="nav-item">
@@ -143,7 +140,7 @@
                         <div class="col-md-4">
                             <div class="box" >
                                 <img src="../assets/images/cart-item-1.png" alt="" class="product-img">
-                                <h3 class="product-title">Americano - Hot Espresso (12 OZ)</h3>
+                                <h3 class="product-title">Americano - Hot Espresso      </h3>
                                 <div class="price">₹45.00</div>
                                 <a class="btn add-cart" id="a">Add to Cart</a>
                             </div>
@@ -151,7 +148,7 @@
                         <div class="col-md-4">
                             <div class="box">
                                 <img src="../assets/images/cart-item-2.png" alt="" class="product-img">
-                                <h3 class="product-title">Colombian Supremo Cup (12 OZ)</h3>
+                                <h3 class="product-title">Colombian Supremo Cup      </h3>
                                 <div class="price">₹40.00</div>
                                 <a class="btn add-cart" id="b">Add to Cart</a>
                             </div>
@@ -159,7 +156,7 @@
                         <div class="col-md-4">
                             <div class="box">
                                 <img src="../assets/images/cart-item-3.png" alt="" class="product-img">
-                                <h3 class="product-title">Nitro Cold Brew w/ Straw (12 OZ)</h3>
+                                <h3 class="product-title">Nitro Cold Brew <br>w/ Straw      </h3>
                                 <div class="price">₹50.00</div>
                                 <a class="btn add-cart" id="c">Add to Cart</a>
                             </div>
@@ -191,9 +188,9 @@
                             </div>
                         </div>
                     </div><br />  -->
-                    <center>
+                    <!-- <center>
                         <button id="showHideBtn" class="btn btn-dark">SHOW MORE</button>
-                    </center> 
+                    </center>  -->
                 </div>
             </div>
         </section>
