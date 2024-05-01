@@ -89,7 +89,7 @@ function buyButtonClicked() {
         var title = cartBox.getElementsByClassName("cart-product-title")[0].innerText;
         var price = cartBox.getElementsByClassName("cart-price")[0].innerText;
         var quantity = cartBox.getElementsByClassName("cart-quantity")[0].value;
-        var priceValue = parseFloat(price.replace('₱', '').replace(',', ''));
+        var priceValue = parseFloat(price.replace('₹', '').replace(',', ''));
         var subtotalAmount = priceValue * quantity;
         orderDetails.push({ title: title, price: priceValue, quantity: quantity, subtotal_amount: subtotalAmount, invoice_number: invoiceNumber });    
     }

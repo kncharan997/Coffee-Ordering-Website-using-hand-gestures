@@ -162,35 +162,6 @@
                             </div>
                         </div>
                     </div><br />
-                    <!-- <div class="row">
-                        <div class="col-md-4">
-                            <div class="box">
-                                <img src="../assets/images/cart-item-4.png" alt="" class="product-img">
-                                <h3 class="product-title">Seasonal Single-Origin (12 OZ)</h3>
-                                <div class="price">₹30.00</div>
-                                <a class="btn add-cart">Add to Cart</a>
-                            </div>
-                        </div><br />
-                        <div class="col-md-4">
-                            <div class="box">
-                                <img src="../assets/images/cart-item-5.png" alt="" class="product-img">
-                                <h3 class="product-title">Indonesian Sumatra Mandheling (12 OZ)</h3>
-                                <div class="price">₹40.00</div>
-                                <a class="btn add-cart">Add to Cart</a>
-                            </div>
-                        </div><br />
-                        <div class="col-md-4">
-                            <div class="box">
-                                <img src="../assets/images/cart-item-6.png" alt="" class="product-img">
-                                <h3 class="product-title">Mint Mojito Iced Coffee (12 OZ)</h3>
-                                <div class="price">₹55.00</div>
-                                <a class="btn add-cart">Add to Cart</a>
-                            </div>
-                        </div>
-                    </div><br />  -->
-                    <!-- <center>
-                        <button id="showHideBtn" class="btn btn-dark">SHOW MORE</button>
-                    </center>  -->
                 </div>
             </div>
         </section>
@@ -225,34 +196,35 @@
         </section> 
         <<script>
             document.addEventListener("DOMContentLoaded", function () {
-    // Function to update cart position
-    function updateCartPosition() {
-        const cart = document.getElementById('mycart');
-        const windowHeight = window.innerHeight;
-        const windowWidth = window.innerWidth;
-        const cartHeight = cart.offsetHeight;
-        const cartWidth = cart.offsetWidth;
-        const cartMargin = 20; // Adjust as needed
-        
-        // Calculate new cart position
-        const cartTop = windowHeight - cartHeight - cartMargin;
-        const cartLeft = windowWidth - cartWidth - cartMargin;
+            // Function to update cart position
+            function updateCartPosition() {
+                const cart = document.getElementById('mycart');
+                const windowHeight = window.innerHeight;
+                const windowWidth = window.innerWidth;
+                const cartHeight = cart.offsetHeight;
+                const cartWidth = cart.offsetWidth;
+                const cartMargin = 20;
+                
+                // Calculate new cart position
+                const cartTop = windowHeight - cartHeight - cartMargin;
+                const cartLeft = windowWidth - cartWidth - cartMargin;
 
-        // Set cart position
-        cart.style.top = cartTop + 'px';
-        cart.style.left = cartLeft + 'px';
-    }
+                // Set cart position
+                cart.style.top = cartTop + 'px';
+                cart.style.left = cartLeft + 'px';
+            }
 
-    // Initial update of cart position
-    updateCartPosition();
+            // Initial update of cart position
+            updateCartPosition();
 
-    // Update cart position when window is resized
-    window.addEventListener('resize', function () {
-        updateCartPosition();
-    });
-});
+            // Update cart position when window is resized
+            window.addEventListener('resize', function () {
+                updateCartPosition();
+            });
+        });
 
         </script>
+        
         <script>
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -281,51 +253,62 @@
             return count;
         }
 
-        function handleGesture(fingerCount) {
-            let buttonClicked = false;
-            switch (fingerCount) {
-                case 1:
-                    setTimeout(() => {
-                        var addCartButton = document.getElementById('a');
-                            addCartButton.click();
-                            addCartButton.removeEventListener('click', addCartClicked);
-                            buttonClicked = true; 
-                    }, 3000);
-                    break;
-                case 2:
-                    setTimeout(() => {
-                        var addCartButton = document.getElementById('b');
-                            addCartButton.click();
-                            addCartButton.removeEventListener('click', addCartClicked);
-                            buttonClicked = true;
-                    }, 3000);
+        let lastFingerCount = null; // Variable to store the last detected finger count
+        let consecutiveCount = 0; // Variable to store the consecutive count of the same finger count
+        let eventTriggered = false; // Flag to control whether the event has been triggered in the current 3-second interval
 
-                    break;
-                case 3:
-                    setTimeout(() => {
-                        var addCartButton = document.getElementById('c');
+        function handleGesture(fingerCount) {
+            // If the current finger count is different from the last one, reset consecutive count and event flag
+            if (fingerCount !== lastFingerCount) {
+                consecutiveCount = 1;
+                lastFingerCount = fingerCount;
+                eventTriggered = false;
+            } else {
+                consecutiveCount++; // Increment consecutive count if the same finger count is detected consecutively
+            }
+
+            // If the consecutive count reaches 3 and the event hasn't been triggered yet in this interval, trigger the event
+            if (consecutiveCount === 65 && !eventTriggered) {
+                switch (fingerCount) {
+                    case 1:
+                        setTimeout(() => {
+                            var addCartButton = document.getElementById('a');
                             addCartButton.click();
-                            addCartButton.removeEventListener('click', addCartClicked);
-                            buttonClicked = true;
-                    }, 3000);
-                    break;
-                case 4:
-                    setTimeout(() => {
-                        window.location.href = '';
-                    }, 3000);
-                    break;
-                case 5:
-                    setTimeout(() => {
-                        var addCartButton = document.getElementById('checkout');
+                            eventTriggered = true;
+                        }, 2000);
+                        break;
+                    case 2:
+                        setTimeout(() => {
+                            var addCartButton = document.getElementById('b');
                             addCartButton.click();
-                            addCartButton.addEventListener('click', buyButtonClicked);
-                            buttonClicked = true;
-                    }, 3000);
-                    break;
-                
-                default:
-                    // Handle unrecognized gestures or no gesture
-                    break;
+                            eventTriggered = true;
+                        }, 2000);
+                        break;
+                    case 3:
+                        setTimeout(() => {
+                            var addCartButton = document.getElementById('c');
+                            addCartButton.click();
+                            eventTriggered = true;
+                        }, 2000);
+                        break;
+                    case 4:
+                        setTimeout(() => {
+                            window.location.href = '';
+                            eventTriggered = true;
+                        }, 2000);
+                        break;
+                    case 5:
+                        setTimeout(() => {
+                            var addCartButton = document.getElementById('checkout');
+                            addCartButton.click();
+                            eventTriggered = true;
+                        }, 2000);
+                        break;
+                    default:
+                        // Handle unrecognized gestures or no gesture
+                        break;
+                }
+                consecutiveCount = 0; // Reset consecutive count after triggering the event
             }
         }
         function onResults(results) {
@@ -349,7 +332,7 @@
                                 // Add the current finger count to the history
                                 fingerCountHistory.push(fingerCount);
                                 // Check if the last 3 seconds have had consistent finger count
-                                if (fingerCountHistory.length >= 3) {
+                                if (fingerCountHistory.length >= 2) {
                                     const last3Seconds = fingerCountHistory.slice(-3);
                                     const uniqueFingerCounts = new Set(last3Seconds);
                                     if (uniqueFingerCounts.size === 1) {
@@ -362,7 +345,7 @@
                                         fingerCountHistory = [];
                                         fingerCountTimeout = setTimeout(() => {
                                             handleGesture(last3Seconds[last3Seconds.length - 1]);
-                                        }, 3000);
+                                        }, 2000);
                                     }
                                 }
                             }
@@ -397,6 +380,7 @@
                 });
                 camera.start();
         });
+
         </script>
         <!-- JS File Link -->
         <script src="../assets/js/googleSignIn.js"></script>
@@ -434,20 +418,6 @@
                 $("#showHideBtn").click(function() {
                     $(".row-to-hide").toggle();
                     if ($(".row-to-hide").is(":visible")) {
-                        $(this).text("SHOW LESS");
-                    } else {
-                        $(this).text("SHOW MORE");
-                    }
-                });
-            });
-
-            // CODE FOR THE SHOW MORE & SHOW LESS BUTTON IN GALLERY
-            $(document).ready(function() {
-                $(".pic-to-hide").hide();
-                $("#showBtn").text("SHOW MORE");
-                $("#showBtn").click(function() {
-                    $(".pic-to-hide").toggle();
-                    if ($(".pic-to-hide").is(":visible")) {
                         $(this).text("SHOW LESS");
                     } else {
                         $(this).text("SHOW MORE");
