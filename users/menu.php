@@ -224,7 +224,7 @@
         });
 
         </script>
-        
+
         <script>
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -268,7 +268,7 @@
             }
 
             // If the consecutive count reaches 3 and the event hasn't been triggered yet in this interval, trigger the event
-            if (consecutiveCount === 65 && !eventTriggered) {
+            if (consecutiveCount === 55 && !eventTriggered) {
                 switch (fingerCount) {
                     case 1:
                         setTimeout(() => {
@@ -293,20 +293,41 @@
                         break;
                     case 4:
                         setTimeout(() => {
-                            window.location.href = '';
+                            // Simulate click on the cart-remove button
+                            var cartRemoveButton = document.getElementsByClassName("cart-remove")[0];
+                            if (cartRemoveButton) {
+                                cartRemoveButton.click();
+                            }
                             eventTriggered = true;
                         }, 2000);
                         break;
-                    case 5:
+
+                //     case 5:
+                //         setTimeout(() => {
+                //             var addCartButton = document.getElementById('checkout');
+                //             addCartButton.click();
+                //             eventTriggered = true;
+                //             window.location.href = 'index.php';
+                //         }, 2000);
+                //         break;
+                //     default:
+                //         // Handle unrecognized gestures or no gesture
+                //         break;
+                // }
+                case 5:
+                    setTimeout(() => {
+                        var addCartButton = document.getElementById('checkout');
+                        addCartButton.click();
+                        eventTriggered = true;
+                        
+                        // Wait for 2 seconds before redirecting to index.php
                         setTimeout(() => {
-                            var addCartButton = document.getElementById('checkout');
-                            addCartButton.click();
-                            eventTriggered = true;
+                            window.location.href = 'index.php';
                         }, 2000);
-                        break;
-                    default:
-                        // Handle unrecognized gestures or no gesture
-                        break;
+                    }, 2000);
+                    break;
+                default:
+                    break;
                 }
                 consecutiveCount = 0; // Reset consecutive count after triggering the event
             }
@@ -355,14 +376,14 @@
                         console.log("error", error);
                     }
                 }
-
+                
                 const hands = new Hands({
                     locateFile: (file) => {
                         return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
                     }
                 });
                 hands.setOptions({
-                    maxNumHands: 1,
+                    maxNumHands: 2,
                     modelComplexity: 1,
                     minDetectionConfidence: 0.5,
                     minTrackingConfidence: 0.5,
