@@ -85,9 +85,6 @@
                     <a href="index.php" class="text-decoration-none">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?section=#menu" class="text-decoration-none">Menu</a>
-                </li>
-                <li class="nav-item">
                     <a href="index.php?section=#about" class="text-decoration-none">About</a>
                 </li>
                 <li class="nav-item">
@@ -95,6 +92,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="index.php?section=#contact" class="text-decoration-none">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.php?section=#menu" class="text-decoration-none">Menu</a>
                 </li>
                 <li class="nav-item">
                     <a href="logout.php" class="text-decoration-none">Logout</a>
@@ -268,7 +268,7 @@
             }
 
             // If the consecutive count reaches 3 and the event hasn't been triggered yet in this interval, trigger the event
-            if (consecutiveCount === 55 && !eventTriggered) {
+            if (consecutiveCount === 75 && !eventTriggered) {
                 switch (fingerCount) {
                     case 1:
                         setTimeout(() => {

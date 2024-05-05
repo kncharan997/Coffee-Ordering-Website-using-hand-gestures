@@ -83,9 +83,6 @@
                     <a href="index.php" class="text-decoration-none">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="menu.php" class="text-decoration-none">Menu</a>
-                </li>
-                <li class="nav-item">
                     <a href="#about" class="text-decoration-none">About</a>
                 </li>
                 <li class="nav-item">
@@ -93,6 +90,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="text-decoration-none">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="menu.php" class="text-decoration-none">Menu</a>
                 </li>
                 <li class="nav-item">
                     <a href="logout.php" class="text-decoration-none">Logout</a>
@@ -392,12 +392,12 @@
                             break;
                         case 4:
                             setTimeout(() => {
-                                window.location.href = '#contact';
+                                window.location.href = 'menu.php';
                             }, 5000);
                             break;
                         case 5:
                             setTimeout(() => {
-                                window.location.href = 'menu.php';
+                                window.location.href = 'logout.php';
                             }, 5000);
                             break;
                         default:
@@ -497,12 +497,12 @@
             // CODE FOR THE GOOGLE MAPS API
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: 14.99367271992383, lng: 120.17629231186626},
+                    center: {lat: 12.965938, lng: 77.711981},
                     zoom: 9
                 });
 
                 var marker = new google.maps.Marker({
-                    position: {lat: 14.99367271992383, lng: 120.17629231186626},
+                    position: {lat: 12.965938, lng: 77.711981},
                     map: map,
                     title: 'Your Location'
                 });
