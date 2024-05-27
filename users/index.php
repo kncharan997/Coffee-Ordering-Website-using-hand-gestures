@@ -378,27 +378,27 @@
                         case 1:
                             setTimeout(() => {
                                 window.location.href = '#about';
-                            }, 5000);
+                            }, 3000);
                             break;
                         case 2:
                             setTimeout(() => {
                                 window.location.href = '#gallery';
-                            }, 5000);
+                            }, 3000);
                             break;
                         case 3:
                             setTimeout(() => {
                                 window.location.href = '#contact';
-                            }, 5000);
+                            }, 3000);
                             break;
                         case 4:
                             setTimeout(() => {
                                 window.location.href = 'menu.php';
-                            }, 5000);
+                            }, 3000);
                             break;
                         case 5:
                             setTimeout(() => {
                                 window.location.href = 'logout.php';
-                            }, 5000);
+                            }, 3000);
                             break;
                         default:
                             // Handle unrecognized gestures or no gesture
@@ -440,7 +440,7 @@
                                         fingerCountHistory = [];
                                         fingerCountTimeout = setTimeout(() => {
                                             handleGesture(last3Seconds[last3Seconds.length - 1]);
-                                        }, 3000);
+                                        }, 4000);
                                     }
                                 }
                             }
